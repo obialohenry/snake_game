@@ -1,9 +1,7 @@
 from turtle import Turtle
 STARTING_Y = 280
 ALIGNMENT ="center"
-FONT_FAMILY = "Arial"
-FONT_SIZE = 24
-FONT_TYPE = "normal"
+FONT=("Arial",24,"normal")
 
 class Scoreboard(Turtle):
 
@@ -19,7 +17,7 @@ class Scoreboard(Turtle):
     def update_scoreboard(self):
         """Clear previous score from screen, and writes current score on screen."""
         self.clear()
-        self.write(f"Score: {self.score}", align=ALIGNMENT,font=(FONT_FAMILY,FONT_SIZE,FONT_TYPE))
+        self.write(f"Score: {self.score}", align=ALIGNMENT,font=FONT)
 
     def increase_score(self):
         """Increase current score by 1 after the snake have eaten food, and updates the score board."""
