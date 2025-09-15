@@ -38,10 +38,8 @@ while game_is_on:
         scoreboard.game_over()
 
     # Detect collision with its own body.
-    for segment in snake.snake_body_segments:
-        if segment == snake.head:
-            continue
-        elif snake.head.distance(segment) < 10:
+    for segment in snake.snake_body_segments[1:(len(snake.snake_body_segments) -1)]:
+       if snake.head.distance(segment) < 10:
             game_is_on = False
             scoreboard.game_over()
 
