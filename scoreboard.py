@@ -9,10 +9,14 @@ class Scoreboard(Turtle):
         self.color('white')
         self.sety(STARTING_Y)
         self.score = 0
-        self.write(f"Score: {self.score}",align='center')
+        self.update_scoreboard()
+
+    def update_scoreboard(self):
+        """Clear previous score from screen, and writes current score on screen."""
+        self.clear()
+        self.write(f"Score: {self.score}", align='center')
 
     def increase_score(self):
-        """Increase current score by 1 after the snake have eaten food."""
-        self.clear()
-        self.score = self.score +1
-        self.write(f"Score: {self.score}", align='center')
+        """Increase current score by 1 after the snake have eaten food, and updates the score board."""
+        self.score +=1
+        self.update_scoreboard()
