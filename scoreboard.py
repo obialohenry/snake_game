@@ -11,7 +11,7 @@ class Scoreboard(Turtle):
         self.score = 0
         self.write(f"Score: {self.score}",align='center')
 
-    def update_scoreboard(self):
+    def increase_score(self):
         """Increase current score by 1 after the snake have eaten food."""
         self.clear()
         self.score = self.score +1
