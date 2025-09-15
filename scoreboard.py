@@ -20,7 +20,7 @@ class Scoreboard(Turtle):
         self.write(f"Score: {self.score}", align=ALIGNMENT,font=FONT)
 
     def game_over(self):
-        """Display [GAME OVER] message at the center of the screen."""
+        """Display a [GAME OVER] message at the center of the screen."""
         self.setposition(0,0)
         self.write("GAME OVER", align=ALIGNMENT, font=FONT)
 
