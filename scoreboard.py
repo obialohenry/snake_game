@@ -1,7 +1,7 @@
 from turtle import Turtle
-STARTING_Y = 280
+STARTING_Y = 270
 ALIGNMENT ="center"
-FONT=("Arial",24,"normal")
+FONT=("Arial",22,"normal")
 
 class Scoreboard(Turtle):
 
@@ -18,6 +18,11 @@ class Scoreboard(Turtle):
         """Clear previous score from screen, and writes current score on screen."""
         self.clear()
         self.write(f"Score: {self.score}", align=ALIGNMENT,font=FONT)
+
+    def game_over(self):
+        """Display [GAME OVER] message at the center of the screen."""
+        self.setposition(0,0)
+        self.write("GAME OVER", align=ALIGNMENT, font=FONT)
 
     def increase_score(self):
         """Increase current score by 1 after the snake have eaten food, and updates the score board."""
