@@ -7,11 +7,10 @@ LEFT = 180
 DOWN = 270
 
 class Snake:
-    snake_body_segments = []
-
+    
     def __init__(self):
-        self.create_snake()
-        self.head = self.snake_body_segments[0]
+        self.snake_body_segments = []
+        self.create_snake()  
 
     def create_snake(self):
         """Create the initial snake body.
@@ -21,6 +20,7 @@ class Snake:
         """
         for position in STARTING_POSITIONS:
             self.add_segment(position)
+        self.head = self.snake_body_segments[0]
 
     def add_segment(self,position):
         """Create a new white square segment at the given position and add it to the snake body."""
@@ -45,6 +45,17 @@ class Snake:
             new_y = self.snake_body_segments[seg_num - 1].ycor()
             self.snake_body_segments[seg_num].setposition(new_x, new_y)
         self.head.forward(MOVE_DISTANCE)
+
+    def reset(self):
+        """ Reset the snake.
+
+        Move  all current body segments off-screen, and clear the list.
+        Then create a new snake at the initial starting position.
+        """
+        for snake_body in self.snake_body_segments:
+            snake_body.goto(1000,1000)
+        self.snake_body_segments.clear()
+        self.create_snake()
 
     def up(self):
         """Turn the snake upward, unless it is currently facing down. """
