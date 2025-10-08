@@ -26,8 +26,8 @@ class Scoreboard(Turtle):
     def reset(self):
         """Reset the scoreboard.
 
-    If the current score is greater than the high score, update the high score.
-    Then reset the current score to 0 and refresh the display.
+           If the current score is greater than the high score, update the high score.
+           Then reset the current score to 0 and refresh the display.
         """
         if self.score > self.high_score:
             self.high_score = self.score
@@ -41,6 +41,11 @@ class Scoreboard(Turtle):
         self.update_scoreboard()
 
     def save_high_score_locally(self):
+     """Save the player's high score.
+
+        If the current score is greater than the high score, update the high score.
+        Then save in the device storage, by writing the new highscore in a local text file(data.txt).
+     """
      if self.score > self.high_score:
         self.high_score = self.score
         with open("data.txt", mode='w') as data:
